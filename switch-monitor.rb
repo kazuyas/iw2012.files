@@ -9,13 +9,13 @@ class SwitchMonitor < Controller
 
   def switch_ready dpid
     @switches << dpid.to_hex
-    info "Switch #{ dpid.to_hex } is UP"
+    puts "Switch #{ dpid.to_hex } is UP"
   end
 
 
   def switch_disconnected dpid
     @switches -= [ dpid.to_hex ]
-    info "Switch #{ dpid.to_hex } is DOWN"
+    puts "Switch #{ dpid.to_hex } is DOWN"
   end
 
 
@@ -23,6 +23,6 @@ class SwitchMonitor < Controller
 
 
   def show_switches
-    info "All switches = " + @switches.sort.join( ", " )
+    puts "All switches = " + @switches.sort.join( ", " )
   end
 end

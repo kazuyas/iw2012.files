@@ -1,5 +1,5 @@
 class HelloTrema < Controller
   def start
-    info "Hello Trema!"
+    puts "Hello Trema!"
   end
 end
