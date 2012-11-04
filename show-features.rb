@@ -5,14 +5,12 @@ class ShowFeatures < Controller
 
 
   def features_reply datapath_id, message
-    info "Datapath ID: #{ datapath_id.to_hex }"
+    puts "Datapath ID: #{ datapath_id.to_hex }"
 
     message.ports.each do | each |
-      info "Port no: #{ each.number }"
-      info "  Hardware address: #{ each.hw_addr.to_s }"
-      info "  Port name: #{ each.name }"
+      puts "Port no: #{ each.number }"
+      puts "  Hardware address: #{ each.hw_addr.to_s }"
+      puts "  Port name: #{ each.name }"
     end
-
-    shutdown!
   end
 end
